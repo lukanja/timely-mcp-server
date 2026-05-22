@@ -1,4 +1,4 @@
-### Unreleased
+### 1.1.0: 2026-05-22
 
 * Default `timely_list_events` to the authenticated user's own entries so admins no longer get the whole account by default
 * Add `all_users` option to `timely_list_events` for the account-wide admin view

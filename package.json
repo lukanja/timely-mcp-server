@@ -1,6 +1,6 @@
 {
   "name": "timely-mcp-server",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "MCP server for Timely time tracking API",
   "type": "module",
   "main": "server.ts",

@@ -108,7 +108,7 @@ async function getCurrentUserId(): Promise<number> {
 
 const server = new McpServer({
   name: "timely",
-  version: "1.0.0",
+  version: "1.1.0",
 });
 
 // Current user
