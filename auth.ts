@@ -107,12 +107,12 @@ const server = createServer({
     console.log("Tokens saved to .tokens.json");
     console.log(`Access token: ${tokens.access_token?.slice(0, 20)}...`);
 
-    const meRes = await fetch(`${TIMELY_BASE}/1.1/me`, {
+    const accountsRes = await fetch(`${TIMELY_BASE}/1.1/accounts`, {
       headers: { Authorization: `Bearer ${tokens.access_token}` },
     });
-    if (meRes.ok) {
-      const me = await meRes.json();
-      const accountId = me.accounts?.[0]?.id;
+    if (accountsRes.ok) {
+      const accounts = await accountsRes.json();
+      const accountId = accounts?.[0]?.id;
       if (accountId && !env.TIMELY_ACCOUNT_ID) {
         const envContent = readFileSync(ENV_PATH, "utf-8");
         writeFileSync(ENV_PATH, envContent.trimEnd() + `\nTIMELY_ACCOUNT_ID=${accountId}\n`);
